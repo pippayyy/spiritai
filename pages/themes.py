@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 import sidebar
+import os
 
 st.markdown(
     """
@@ -14,24 +15,15 @@ st.markdown(
             margin-right: auto;
             width: 100%;
         }
+
+        [data-testid=stSidebarUserContent] {
+            padding-bottom: 0px;
+        }
+
         .sidebar .sidebar-content {
             display: flex;
             flex-direction: column;
             align-items: center;
-        }
-
-        .title-text {
-        color: #E60000;
-        }
-
-        @font-face {
-        font-family: 'Futura PT Light';
-        font-style: normal;
-        font-weight: normal;
-        src: local('Futura PT Light'), url('fonts/WOFF.woff') format('woff');
-        }
-        html, body, [class*="css"] {
-        font-family: 'Futura PT Light', sans-serif;
         }
 
         .wrap {
@@ -45,7 +37,6 @@ st.markdown(
         .wrap span {
             align-self: flex-end;
         }
-
 
     </style>
     """, unsafe_allow_html=True
@@ -73,30 +64,15 @@ with st.sidebar:
 
 
 # Center-aligned header
-st.markdown("<h1 style='text-align: center;'>Spirit AI Tool</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>Identify Comment Themes</h1>", unsafe_allow_html=True)
 
 # Center-aligned paragraph
-st.markdown("<p style='text-align: center;'>This tool uses AI to analyse spirit comments quickly, making it easier for Spirit Ambassadors to provide a high-level view of comments.</p>", unsafe_allow_html=True)
-
-# Left-aligned header
-st.markdown("<h1 style='text-align: left;'>How it works?</h1>", unsafe_allow_html=True)
-
-# Left-aligned paragraph
-st.markdown("<p style='text-align: left;'>Blah blah blahhhh</p>", unsafe_allow_html=True)
-
-# Divider
-st.divider()
+st.markdown("<p style='text-align: center;'>Upload your Spirit Beat comment extract (excel file) to perform a thematic analysis.</p>", unsafe_allow_html=True)
 
 
 
-# Left-aligned header
-st.markdown("<h1 style='text-align: left;'>How it works?</h1>", unsafe_allow_html=True)
-
-# Left-aligned paragraph
-st.markdown("<p style='text-align: left;'>Blah blah blahhhh</p>", unsafe_allow_html=True)
-
-# Divider
-st.divider()
-
-
-
+uploaded_files = st.file_uploader("Choose an .xlsx file", accept_multiple_files=True)
+for uploaded_file in uploaded_files:
+    bytes_data = uploaded_file.read()
+    st.write("filename:", uploaded_file.name)
+    st.write(bytes_data)

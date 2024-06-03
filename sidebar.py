@@ -32,6 +32,6 @@ with st.sidebar:
 
     # Nav page links
     st.page_link("streamlit_app.py", label="Home")
-    st.page_link("pages/page_1.py", label="Themes")
-    st.page_link("pages/page_2.py", label="Sentiment", disabled=True)
+    st.page_link("pages/themes.py", label="Themes")
+    st.page_link("pages/sentiment.py", label="Sentiment", disabled=True)
     st.page_link("http://www.google.com", label="Chat", disabled=True)
