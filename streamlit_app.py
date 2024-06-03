@@ -20,6 +20,10 @@ st.markdown(
             align-items: center;
         }
 
+        [data-testid=stSidebarUserContent] {
+            padding-bottom: 0px;
+        }
+
         .title-text {
         color: #E60000;
         }
@@ -53,7 +57,7 @@ st.markdown(
 
 with st.sidebar:
     # VF Icon
-    st.image('VF_Icon_RGB_RED.png', width=100)
+    st.image('images/VF_Icon_RGB_RED.png', width=100)
 
     # Center-aligned header
     st.markdown("<h3 style='text-align: center;'>Spirit Survey AI Analyser</h3>", unsafe_allow_html=True)
@@ -90,10 +94,10 @@ st.divider()
 
 
 # Left-aligned header
-st.markdown("<h1 style='text-align: left;'>How it works?</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: left;'>Why is this beneficial?</h1>", unsafe_allow_html=True)
 
 # Left-aligned paragraph
-st.markdown("<p style='text-align: left;'>Blah blah blahhhh</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: left;'>Using AI to analyse Spirit Beat data enables Spirit Ambassadors to identify common themes and key insights fast. Using this technology is crucial for efficiently processing large volumes of feedback.</p>", unsafe_allow_html=True)
 
 # Divider
 st.divider()

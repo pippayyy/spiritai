@@ -27,7 +27,7 @@ st.markdown(
 
 with st.sidebar:
     # VF Icon
-    st.image('VF_Icon_RGB_RED.png', width=100)
+    st.image('images/VF_Icon_RGB_RED.png', width=100)
 
     # Center-aligned header
     st.markdown("<h3 style='text-align: center;'>Spirit Survey AI Analyser</h3>", unsafe_allow_html=True)
